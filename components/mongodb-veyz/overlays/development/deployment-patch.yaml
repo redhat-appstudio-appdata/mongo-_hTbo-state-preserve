@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  name: mongodb-veyz
+  namespace: sde-rcook-tenant
+spec:
+  replicas: 1
+  selector: {}
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+    spec:
+      containers:
+      - image: quay.io/redhat-appstudio/user-workload@sha256:544e7a3da461fb972b8ed7dc04f4a2295bdc9214ced3448e88ba3d76c7fa2edb
+        name: container-image
+        resources: {}
+status: {}
