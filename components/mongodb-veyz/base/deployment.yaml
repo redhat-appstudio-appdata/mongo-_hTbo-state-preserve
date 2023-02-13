@@ -23,7 +23,7 @@ spec:
         app.kubernetes.io/instance: mongodb-veyz
     spec:
       containers:
-      - image: quay.io/redhat-appstudio/user-workload:sde-rcook-tenant-mongodb-veyz
+      - image: quay.io/redhat-appstudio/user-workload@sha256:544e7a3da461fb972b8ed7dc04f4a2295bdc9214ced3448e88ba3d76c7fa2edb
         imagePullPolicy: Always
         livenessProbe:
           httpGet:
@@ -40,6 +40,9 @@ spec:
           tcpSocket:
             port: 8080
         resources:
+          limits:
+            cpu: "1"
+            memory: 512Mi
           requests:
             cpu: 10m
             memory: 50Mi
